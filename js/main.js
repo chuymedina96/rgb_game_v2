@@ -49,5 +49,12 @@ function generateRandomColors(num){
     
 }
 function randomColor() {
+    Math.floor(Math.random() * 266);
+    Math.floor(Math.random() * 266);
+    Math.floor(Math.random() * 266);
+    Math.floor(Math.random() * 266);
+    Math.floor(Math.random() * 266);
+    Math.floor(Math.random() * 266);
+    
     
 }
