@@ -5,8 +5,24 @@ var pickedColor = pickNumber();
 var colorDisplay = document.getElementById("colorDisplay");
 var answer = document.getElementById("correct");
 var h1 = document.querySelector("h1");
+var resetButton =document.querySelector("#reset")
 colorDisplay.textContent = pickedColor;
 
+resetButton.addEventListener("click", function() {
+    var colors = generateRandomColors(6);
+    
+    pickedColor = pickNumber();
+    
+    colorDisplay.textContent = pickedColor;
+    
+    
+    for (i = 0; i < squares.length; i++) {
+    //event listener
+    squares[i].style.backgroundColor = colors[i];
+    }
+    
+    
+});
 
 for (i = 0; i < squares.length; i++) {
     //event listener
