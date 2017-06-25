@@ -6,10 +6,19 @@ var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
+var modeButtons = document.querySelectorAll(".mode");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
 
-easyBtn.addEventListener("click", function() {
+for (var i = 0; i < modeButtons.length; i++) {
+    modeButtons[i].addEventListener("click", function() {
+        modeButtons[0].classList.remove("selected");
+        modeButtons[1].classList.remove("selected");
+        this.classList.add("selected");
+    });
+}
+
+/*easyBtn.addEventListener("click", function() {
     easyBtn.classList.add("selected");
     hardBtn.classList.remove("selected");
     numSquares = 3;
@@ -37,19 +46,9 @@ hardBtn.addEventListener("click", function() {
         squares[i].style.display = "block";
     }
 });
-
+*/
 resetButton.addEventListener("click", function() {
-    //generate all new colors
-    colors = generateRandomColors(numSquares);
-    //pick a new random color from array
-    pickedColor = pickColor();
-    //change colorDisplay to match picked Color
-    colorDisplay.textContent = pickedColor;
-    //change colors of squares
-    for(var i = 0; i < squares.length; i++) {
-        squares[i].style.background = colors[i];
-    }
-    h1.style.background = "#232323";
+    reset();
 });
 
 colorDisplay.textContent = pickedColor;
@@ -73,6 +72,22 @@ for(var i = 0; i < squares.length; i++){
             messageDisplay.textContent = "Try Again";
         }
     });
+}
+
+function reset() {
+    colors = generateRandomColors(numSquares);
+    //pick a new random color from array
+    pickedColor = pickColor();
+    //change colorDisplay to match picked Color
+    colorDisplay.textContent = pickedColor;
+    resetButton.textContent = "New Colors";
+
+    messageDisplay.textContent = "";
+    //change colors of squares
+    for(var i = 0; i < squares.length; i++) {
+        squares[i].style.background = colors[i];
+    }
+    h1.style.background = "steelBlue";
 }
 
 function changeColors(color) {
