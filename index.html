@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Color game</title>        
-    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <title>Color Game</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-    <h1>The great <span id ="colorDisplay">RGA</span>Game</h1>
-    <div id="stripe">
-        <button id = "reset">New colors</button>
-        <h1 id="correct"></h1>
-    </div>
+<h1>
+    The Great <span id="colorDisplay">RGB</span> Color Game
+</h1>
+
+<div id="stripe">
+    <button id="reset">New Colors</button>
+    <span id="message"></span>
+    <button id="easyBtn">Easy</button>
+    <button id="hardBtn" class="selected">Hard</button>
+</div>
+
 <div id="container">
     <div class="square"></div>
     <div class="square"></div>
@@ -18,6 +24,7 @@
     <div class="square"></div>
     <div class="square"></div>
 </div>
-</body>
+
 <script type="text/javascript" src="js/main.js"></script>
+</body>
 </html>
