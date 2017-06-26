@@ -1,16 +1,22 @@
 var numSquares = 6;
-var colors = generateRandomColors(numSquares);
+var colors = [];
 var squares = document.querySelectorAll(".square");
-var pickedColor = pickColor();
+var pickedColor;
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 var modeButtons = document.querySelectorAll(".mode");
+var game = {};
+game.init = function() {
+    setModeButtons();
+    SetUpSquares();
+    reset();
+}
+game.init();
 
-init();
-
-function init() {
+//MODE BUTTONS FUNCTION
+function setModeButtons() {
     for (var i = 0; i < modeButtons.length; i++) {
         modeButtons[i].addEventListener("click", function() {
             modeButtons[0].classList.remove("selected");
@@ -29,7 +35,9 @@ function init() {
             reset();
         });
     }
-    
+}
+//SETTING UP SQUARES FUNCTION
+function SetUpSquares() {
     for(var i = 0; i < squares.length; i++){
         // add initial colors to squares
         squares[i].style.background = colors[i];
@@ -50,9 +58,8 @@ function init() {
             }
         });
     }
-    reset();
 }
-
+//RESET BUTTON EVENT LISTENER FUNCTION
 resetButton.addEventListener("click", function() {
     reset();
 });
