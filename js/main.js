@@ -7,8 +7,6 @@ var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 var modeButtons = document.querySelectorAll(".mode");
-var easyBtn = document.querySelector("#easyBtn");
-var hardBtn = document.querySelector("#hardBtn");
 
 init();
 
@@ -17,8 +15,17 @@ function init() {
         modeButtons[i].addEventListener("click", function() {
             modeButtons[0].classList.remove("selected");
             modeButtons[1].classList.remove("selected");
+            modeButtons[2].classList.remove("selected");
             this.classList.add("selected");
-            this.textContent === "Easy" ? numSquares = 3: numSquares = 6;
+            if(this.textContent === "Easy") {
+                numSquares = 3;
+            }
+            else if(this.textContent ==="Hard"){
+                numSquares = 6;
+            }
+            else if (this.textContent ==="Extreme"){
+                numSquares = 9;
+            }
             reset();
         });
     }
