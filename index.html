@@ -3,6 +3,7 @@
 <head>
     <title>RGB Color Game</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
 </head>
 <body>
 <h1>The Great 
@@ -12,13 +13,13 @@
 
 <div id="stripe">
     <button id="reset">New Colors</button>
-    <span id="message"></span>
+    <span id="message" class="animated flip"></span>
     <button id="easyBtn" class="mode">Easy</button>
     <button id="hardBtn" class="mode selected">Hard</button>
     <button id="extremeBtn" class="mode">Extreme</button>
 </div>
 
-<div id="container">
+<div id="container" class="animated flip">
     <div class="square"></div>
     <div class="square"></div>
     <div class="square"></div>
@@ -31,5 +32,5 @@
 </div>
 
 <script type="text/javascript" src="js/main.js"></script>
-</body>
+<script type="text/javascript" src="js/jQuery.min.js"></script></body>
 </html>

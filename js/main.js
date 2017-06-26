@@ -20,10 +20,10 @@ function init() {
             if(this.textContent === "Easy") {
                 numSquares = 3;
             }
-            else if(this.textContent ==="Hard"){
+            else if(this.textContent === "Hard"){
                 numSquares = 6;
             }
-            else if (this.textContent ==="Extreme"){
+            else if (this.textContent === "Extreme"){
                 numSquares = 9;
             }
             reset();
